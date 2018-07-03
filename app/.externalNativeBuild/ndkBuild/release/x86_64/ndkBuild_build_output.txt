@@ -1,0 +1,12 @@
+Android NDK: WARNING: Unsupported source file extensions in /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/Android.mk for module app    
+Android NDK:   /Users/alexandrabenamar/AndroidStudioProjects/OpenCVScan/app/src/main/jniLibs/arm64-v8a/libopencv_java3.so /Users/alexandrabenamar/AndroidStudioProjects/OpenCVScan/app/src/main/jniLibs/x86_64/libopencv_java3.so    
+rm -f /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/lib/x86_64/*
+rm -f /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/lib/x86_64/gdbserver
+rm -f /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/lib/x86_64/gdb.setup
+mkdir -p /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/obj/local/x86_64
+echo [x86_64] "SharedLibrary  ": "libapp.so"
+/Users/alexandrabenamar/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ -Wl,-soname,libapp.so -shared --sysroot=/Users/alexandrabenamar/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-x86_64 -lgcc -Wl,--exclude-libs,libgcc.a -latomic -Wl,--exclude-libs,libatomic.a  -gcc-toolchain /Users/alexandrabenamar/Library/Android/sdk/ndk-bundle/toolchains/x86_64-4.9/prebuilt/darwin-x86_64 -target x86_64-none-linux-android -no-canonical-prefixes  -Wl,--build-id -Wl,--build-id -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--warn-shared-textrel -Wl,--fatal-warnings   -lc -lm -o /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/obj/local/x86_64/libapp.so
+mkdir -p /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/lib/x86_64
+echo [x86_64] "Install        ": "libapp.so => /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/lib/x86_64/libapp.so"
+install -p /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/obj/local/x86_64/libapp.so /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/lib/x86_64/libapp.so
+/Users/alexandrabenamar/Library/Android/sdk/ndk-bundle/toolchains/x86_64-4.9/prebuilt/darwin-x86_64/bin/x86_64-linux-android-strip --strip-unneeded  /Users/alexandrabenamar/AndroidStudioProjects/OpenCV/app/build/intermediates/ndkBuild/release/lib/x86_64/libapp.so
